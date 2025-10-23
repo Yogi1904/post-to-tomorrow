@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChronoCrate - Time Capsule for Future You</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* RESTORED PASTEEL BLUE/PEACH COLOR PALETTE */
+        :root {
+            --cc-light-bg: #f3f4f6;
+            --cc-card-bg: #ffffff;
+            --cc-primary-pastel: #a7c7e7;
+            --cc-secondary-pastel: #ffb7c5;
+            --cc-dark-text: #374151;
+            --cc-muted-text: #6b7280;
+            --cc-delivered-bg: #fef08a;
+            --cc-sealed-bg: #e0f2f1;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff; /* FORCE WHITE BACKGROUND */
+            color: black; /* FORCE BLACK TEXT */
+        }
+        .text-gradient {
+            /* Keep gradient look */
+            color: #a7c7e7; 
+        }
+        .container {
+            /* Add padding to the container */
+            padding-top: 20px; 
+            padding-bottom: 20px;
+        }
+        /* Make sure all sections are explicitly block */
+        section {
+            display: block !important;
+            margin-bottom: 40px;
+            border: 1px dashed red; /* Temporary visibility aid */
+        }
+        .card-custom {
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body> 
+
+    <header class="py-3 border-bottom" style="background-color: #ffffff;">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h3 fw-bold mb-0 text-gradient">ChronoCrate</h1>
+            <nav class="d-flex align-items-center">
+                <a href="#capsule-form-section" class="me-3">Form</a>
+                <a href="#dashboard-view" class="me-3">Dashboard</a>
+                <button class="btn btn-sm btn-primary">Sign In / Up</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div id="landing-view" style="display: block;">
+            <h2>LANDING PAGE VIEW START</h2>
+            
+            <section class="text-center">
+                <h2 class="display-1 fw-bolder mb-3 lh-1"><span class="text-gradient">Message</span> to the Future.</h2>
+                <a href="#capsule-form-section" class="btn btn-warning">Create Your First Capsule</a>
+            </section>
+            
+            <section id="capsule-form-section">
+                <div class="card-custom">
+                    <h3 class="h3 text-center">Form: Lock Away Your Message</h3>
+                    
+                    <form id="capsuleForm">
+                        <div class="mb-4">
+                            <label class="form-label">Capsule Title</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label">Select Entry Type</label>
+                            <div class="d-flex gap-3 mb-3">
+                                <input type="radio" id="typeText" name="capsuleType" checked><label for="typeText">Text</label>
+                                <input type="radio" id="typeVideo" name="capsuleType"><label for="typeVideo">Video</label>
+                                <input type="radio" id="typeMusic" name="capsuleType"><label for="typeMusic">Audio</label>
+                            </div>
+                            
+                            <div id="content-panel-text" style="display: block;">
+                                <textarea class="form-control" rows="8" placeholder="Your Message"></textarea>
+                            </div>
+                            <div id="content-panel-video" style="display: none;">
+                                <input type="file" class="form-control" accept="video/*">
+                            </div>
+                            <div id="content-panel-music" style="display: none;">
+                                <input type="file" class="form-control" accept="audio/*">
+                            </div>
+                        </div>
+                        
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6"><input type="date" class="form-control" required></div>
+                            <div class="col-md-6"><input type="email" class="form-control" placeholder="Recipient Email" required></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">Seal ChronoCrate & Schedule Delivery</button>
+                    </form>
+                </div>
+            </section>
+
+
+            <section id="features-section">
+                <h3 class="h4 text-center">The Power of Time (Features)</h3>
+                <div class="row g-4">
+                    <div class="col-md-4"><div class="card-custom">Precision Delivery</div></div>
+                    <div class="col-md-4"><div class="card-custom">Private & Secure</div></div>
+                    <div class="col-md-4"><div class="card-custom">Rich Media Support</div></div>
+                </div>
+            </section>
+
+            <section id="how-it-works" class="text-center">
+                <h3 class="h4">How It Works in 3 Steps</h3>
+                <div class="row g-4">
+                    <div class="col-md-4">1. Compose</div>
+                    <div class="col-md-4">2. Schedule</div>
+                    <div class="col-md-4">3. Receive</div>
+                </div>
+            </section>
+            <h2>LANDING PAGE VIEW END</h2>
+        </div>
+
+
+        <section id="dashboard-view" style="display: block;">
+            <h2>DASHBOARD VIEW START</h2>
+            <h2 class="h3 text-center">Your ChronoCrates (Dashboard)</h2>
+
+            <div class="mb-5">
+                <h3 class="h5">Sealed Capsules</h3>
+                <div id="sealed-capsules-list">
+                    <div class="card-custom mb-2">Advice for My 40th Birthday - **Sealed** (Opens: 2040-05-15)</div>
+                    <div class="card-custom mb-2">Video Diary: Job Day - **Sealed** (Opens: 2029-01-01)</div>
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <h3 class="h5">Delivered Capsules</h3>
+                <div id="delivered-capsules-list">
+                    <div class="card-custom mb-2 status-delivered">The Sound of Now (2025) - **Delivered** (Ready to Open)</div>
+                </div>
+            </div>
+            <h2>DASHBOARD VIEW END</h2>
+        </section>
+
+    </div>
+
+    <footer class="p-4 border-top text-center" style="background-color: #ffffff;">
+        <p class="mb-0">&copy; 2025 ChronoCrate. A sentimental project.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+```eof
+
+You should now see the complete static design, albeit unstyled, with a red dashed border around each section. **If this loads correctly, we can revert to the styled, organized layout.**
