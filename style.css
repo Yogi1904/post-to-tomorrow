@@ -1,0 +1,111 @@
+:root {
+  --light-bg: #f3f4f6; /* Soft light gray background */
+  --card-bg: #ffffff; /* White cards */
+  --primary-pastel: #a7c7e7; /* Soft Blue */
+  --secondary-pastel: #ffb7c5; /* Soft Peach/Pink */
+  --dark-text: #374151; /* Dark Gray text */
+  --muted-text: #6b7280; /* Muted secondary text */
+}
+
+.text-primary-pastel {
+  color: var(--primary-pastel);
+}
+
+.text-secondary-pastel {
+  color: var(--secondary-pastel);
+}
+
+.text-dark-pastel {
+  color: var(--dark-text);
+}
+
+.text-muted-pastel {
+  color: var(--muted-text);
+}
+
+.bg-primary-pastel {
+  background-color: var(--primary-pastel);
+}
+
+.bg-secondary-pastel {
+  background-color: var(--secondary-pastel);
+}
+
+.text-gradient {
+  background-image: linear-gradient(
+    to right,
+    var(--primary-pastel),
+    var(--secondary-pastel)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+}
+
+header {
+  background-color: var(--card-bg);
+  box-shadow: 0 3px 6px rgba(167, 199, 231, 0.25);
+}
+
+.btn-primary-pastel {
+  background-color: var(--primary-pastel);
+  border-color: var(--primary-pastel);
+  transition: transform 0.3s ease;
+}
+
+.btn-primary-pastel:hover {
+  background-color: #92bce6;
+  border-color: #92bce6;
+}
+
+.btn-secondary-pastel {
+  background-color: var(--secondary-pastel);
+  border-color: var(--secondary-pastel);
+  transition: transform 0.3s ease;
+}
+
+.btn-secondary-pastel:hover {
+  background-color: #ff9fa8;
+  border-color: #ff9fa8;
+  box-shadow: 0 8px 25px rgba(255, 183, 197, 0.5);
+  scale: 1.05;
+}
+
+.card-custom {
+  background-color: var(--card-bg);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border: 1px solid #a7c7e780;
+}
+
+#feattues article {
+  max-width: 400px;
+}
+
+@media (max-width: 768px) {
+  .card-custom {
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.step-icon-e {
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--secondary-pastel) !important;
+  color: var(--dark-text);
+}
+
+.step-icon-o {
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--primary-pastel) !important;
+  color: var(--dark-text);
+}
+
